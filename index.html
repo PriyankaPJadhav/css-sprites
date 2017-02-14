@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Css sprites</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Css sprites</h1>
+	<h2>What is a Sprite</h2>
+
+	<p>An image sprite is a collection of images put into a single image at defined X and Y coordinates.</p>
+
+	<p>To display a single image from the combined image, you could use the CSS background-position property, defining the exact position of the image to be displayed.</p>
+
+	<p>A web page with many images, particularly many small images, such as icons, buttons, etc. can take a long time to load and generates multiple server requests.</p>
+
+
+	<p>Using the image sprites instead of separate images will significantly reduce the number of HTTP requests a browser makes to the server, which can be very effective for improving the loading time of web pages and overall site performance.</p>
+
+  <h3>Simple Example</h3>
+  <ul class="icon-list">
+  	<li><i class="list-icon icon-1"></i></li>
+  	<li><i class="list-icon icon-2"></i></li>
+  	<li><i class="list-icon icon-3"></i></li>
+  	<li><i class="list-icon icon-4"></i></li>
+  	<li><i class="list-icon icon-5"></i></li>
+  	<li><i class="list-icon icon-6"></i></li>
+  	<li><i class="list-icon icon-7"></i></li>
+  	<li><i class="list-icon icon-8"></i></li>
+  </ul>
+	<div class="clear"></div>
+  <h3>Sprite image</h3>
+  <div class="panel">
+  	<img src="sprite-grid.jpg" alt="" style="display: block;">
+  	<img src="spa-expl.jpg" alt="" style="display: block; margin-top: 15px;">
+  </div>
+	<pre>
+	.list-icon{
+		width: 72px;
+		height:72px;
+		display: block;
+		cursor: pointer;
+		background: url('sprite.png') no-repeat left top;
+	}
+
+	.icon-2{
+		background-position: -72px 0;
+	}
+
+	.icon-1:hover{
+		background-position: 0px -72px;
+	}
+
+	.icon-2:hover{
+		background-position: -72px -72px;
+	}
+	</pre>
+	<div>Example: <img src="sprite-steps.png" alt="" style="vertical-align: middle;"></div>	
+	<div class="hi"></div>
+	<p>For Grid in photoshop add this script :  <a href="https://gist.github.com/chrisfrancis27/5238898">https://gist.github.com/chrisfrancis27/5238898</a><span> File > scripts >  Browse</span>  
+</p>
+Given the image above, we could write the following styles for the media icon:
+<pre>
+	$icon-width: 24px;
+	$icon-height: 24px;
+	$icons: image-url('toolbar.png');
+
+	.media-icon {
+	  background-image: $icons;
+	  background-position: -($icon-width * 5) -($icon-height * 1);
+	  width: $icon-width;
+	  height: $icon-height;
+	}
+</pre>
+<div class="panel">
+	<h3>Disadvantages</h3>
+	<ol><li>One downside to image spriting is that sprite sheets are difficult to maintain</li><li> More development time for slicing images, combining them, and programming background positions in the CSS.</li> <li>Adding a new image requires updating both the image and the related CSS.</li> <li>Matters are made even worse if you decide to remove a sprite.</li>
+	<li>Less SEO friendly. Some images are better be placed in the HTML rather than being backgrounds. HTML images can contain Titles and Alternative texts that are more beneficial to SEO, while CSS backgrounds cannot.</li></ol>
+</div>
+</body>
+</html>

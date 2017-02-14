@@ -1,0 +1,130 @@
+body{
+	font-family:trebuchet ms;
+	padding: 0 15px 15px;
+	background-color: #daddd8;
+	font-size: 16px;
+}
+pre{
+	color: #c7254e;
+	background: #f1f1f1;
+	font-size: 16px;
+	line-height: 1.2;
+	padding-top: 15px;
+}
+.icon-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.clear{
+	clear:both;
+}
+.icon-list >li{
+	float: left;
+	border:1px solid black;
+}
+.panel{
+	background-color: #f1f1f1;
+	border-radius: 4px;
+	padding: 20px;
+}
+.list-icon{
+	width: 72px;
+	height:72px;
+	display: block;
+	cursor: pointer;
+	background: url('sprite.png') no-repeat left top;
+}
+.icon-2{
+	background-position: -72px 0;
+}
+.icon-3{
+	background-position: -504px 0;
+}
+.icon-4{
+	background-position: -144px 0;
+}
+.icon-5{
+	background-position: -216px 0;
+}
+.icon-6{
+	background-position: -288px 0;
+}
+.icon-7{
+	background-position: -360px 0;
+}
+.icon-8{
+	background-position: -432px 0;
+}
+.icon-1:hover{
+	background-position: 0px -72px;
+}
+.icon-2:hover{
+	background-position: -72px -72px;
+}
+.icon-3:hover{
+	background-position: -504px -72px;
+}
+.icon-4:hover{
+	background-position: -144px -72px;
+}
+.icon-5:hover{
+	background-position: -216px -72px;
+}
+.icon-6:hover{
+	background-position: -288px -72px;
+}
+.icon-7:hover{
+	background-position: -360px -72px;
+}
+.icon-8:hover{
+	background-position: -432px -72px;
+}
+
+.hi {
+    width: 50px;
+    height: 72px;
+    background-image: url("sprite-steps.png");
+    
+    -webkit-animation: play .8s steps(10) infinite;
+       -moz-animation: play .8s steps(10) infinite;
+        -ms-animation: play .8s steps(10) infinite;
+         -o-animation: play .8s steps(10) infinite;
+            animation: play .8s steps(10) infinite;
+}
+
+@-webkit-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -500px; }
+}
+
+@-moz-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -500px; }
+}
+
+@-ms-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -500px; }
+}
+
+@-o-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -500px; }
+}
+
+@keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -500px; }
+}
+.cons-panel{
+	padding:0 10px 10px;
+	border: 1px solid #000;
+}
+
+ol{
+	margin: 0;
+}
+ol > li{
+	margin-bottom: 10px;
+}
