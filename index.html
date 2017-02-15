@@ -33,7 +33,17 @@
   <h3>Sprite image</h3>
   <div class="panel">
   	<img src="sprite-grid.jpg" alt="" style="display: block;">
+  	We could calculate position like this
+  	<br>	
   	<img src="sp-expl.jpg" alt="" style="display: block; margin-top: 15px;">
+  	<pre>
+	.code-icon:hover {
+	  background-image: url('sprite.png');
+	  background-position: -216px -72px;
+	  width: 72px;
+	  height: 72px;
+	}
+  	</pre>
   </div>
 	<pre>
 	.list-icon{
@@ -56,26 +66,40 @@
 		background-position: -72px -72px;
 	}
 	</pre>
+	<br>
+	In Scss, we could write the following styles for the code icon hover:
+	<pre>
+		$icon-width: 72px;
+		$icon-height: 72px;
+		$icons: url('sprite.png');
+
+		.code-icon:hover {
+		  background-image: $icons;
+		  background-position: -($icon-width * 3) -($icon-height * 1);
+		  width: $icon-width;
+		  height: $icon-height;
+		}
+		
+	</pre>
+	<br>
 	<div>Example: <img src="sprite-steps.png" alt="" style="vertical-align: middle;"></div>	
 	<div class="hi"></div>
 	<p>For Grid in photoshop add this script :  <a href="https://gist.github.com/chrisfrancis27/5238898">https://gist.github.com/chrisfrancis27/5238898</a><span> File > scripts >  Browse</span>  
 </p>
-Given the image above, we could write the following styles for the media icon:
-<pre>
-	$icon-width: 24px;
-	$icon-height: 24px;
-	$icons: image-url('toolbar.png');
-
-	.media-icon {
-	  background-image: $icons;
-	  background-position: -($icon-width * 5) -($icon-height * 1);
-	  width: $icon-width;
-	  height: $icon-height;
-	}
-</pre>
+Online css sprite generator: <a href="http://css.spritegen.com/">http://css.spritegen.com/</a><br><br>
 <div class="panel">
+	<h3>Advantages</h3>
+
+	<ol>
+		<li>Fewer HTTP requests, which means less server overhead.</li> 
+		<li>Fewer HTTP requests also means reduced page load time on browser.</li>
+		<li>Images appear faster (Especially the hover state images) because the Image Sprite is loaded once and for all.</li>
+	</ol>
+	<br>
 	<h3>Disadvantages</h3>
-	<ol><li>One downside to image spriting is that sprite sheets are difficult to maintain</li><li> More development time for slicing images, combining them, and programming background positions in the CSS.</li> <li>Adding a new image requires updating both the image and the related CSS.</li> <li>Matters are made even worse if you decide to remove a sprite.</li>
+	<ol>
+	<li>More development time for slicing images, combining them, and programming background positions in the CSS.</li> 
+	<li>More maintenance time. Whenever a modification is needed, the whole sprite needs to be re-generated carefully</li>
 	<li>Less SEO friendly. Some images are better be placed in the HTML rather than being backgrounds. HTML images can contain Titles and Alternative texts that are more beneficial to SEO, while CSS backgrounds cannot.</li></ol>
 </div>
 </body>
